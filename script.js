@@ -49,6 +49,21 @@ function dataToTable(id, skill) {
     });
 }
 
+async function deleteSkill(id) {
+    fetch(BASE_URL + "/skill/" + id, {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+    })
+        .then(response => response.json())
+        .then(() => {
+            alert("Success!");
+            location.reload();
+        })
+        .catch(err => alert("Error: ", err));
+}
+
 addSkillBtn.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.href = "./add-skill/add.html";
