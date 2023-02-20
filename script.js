@@ -48,3 +48,8 @@ function dataToTable(id, skill) {
         deleteSkill(id)
     });
 }
+
+addSkillBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "./add-skill/add.html";
+});
